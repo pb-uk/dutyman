@@ -1,0 +1,41 @@
+/**
+ * Alternative style sheet for embedded Dutyman.
+ *
+ * See https://github.com/pbinuk/dutyman.
+ */
+
+body {
+  font-family: sans-serif;
+}
+
+/* Defeat less specific selector in embedded style sheet. */
+tr.datebreak {
+  background-image: none;
+}
+
+/* Remove fixed column widths and format cells nicely. */
+td {
+  width: auto!important;
+  padding: 2px 6px 4px;
+  border: 1px solid #7f7f7f;
+  border-width: 1px 0;
+}
+
+/* Options below */
+
+/* `nolast`: hide last row because it is usually "...and more (see link below)" - use with care! */
+tr:last-child {
+  display: none;
+}
+
+/* `nolink`: hide "All events and duties" link. */
+p {
+  display: none;
+}
+
+/* `bold-event`: highlight the dates and event names - looks best in Mode 3. */
+.datecolumn .datefont,
+.eventcolumn .eventfont
+{
+  font-weight: bold;
+}
